@@ -1,0 +1,7 @@
+pin:
+    path: "path-to-pin-root-directory"
+    bin: "path-to-pin-executable"
+    compile-flags: ""
+pintool:
+    src: "./src/pintool/analysis.cpp"
+    obj: "./obj/analysis.so"

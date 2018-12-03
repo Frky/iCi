@@ -1,0 +1,19 @@
+# vim temporary files*
+*.swp
+*.swo
+
+# pin log file
+pin.log
+
+# object directory
+obj/
+
+# Python compiled files
+*.pyc
+
+# Temporary repo
+tmp/
+
+*.bak
+.venv
+config/config.yaml
