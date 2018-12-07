@@ -1,0 +1,10 @@
+evince:
+    args: "input/poc.pdf"
+    bin:
+        O0: bin/O0/evince
+        O1: bin/O1/evince
+        O2: bin/O2/evince
+        O3: bin/O3/evince
+    pre: ""
+    post: ""
+    bin: ""

@@ -1,0 +1,12 @@
+analysis:
+    oracle: False
+    jcall: True
+    jmp: True
+    iCi: True
+output:
+    overhead: False
+    fscore: True
+    sorted: True
+    opti_lvls: ["O2"]
+ignore: ["fp", "int", "overhead"]
+datadir: "./res/SPEC2006/all"

@@ -1,0 +1,713 @@
+b2sum:
+  args: \-b \-l 512 input/poc.pdf
+  bin:
+    O0: bin/O0/b2sum
+    O1: bin/O1/b2sum
+    O2: bin/O2/b2sum
+    O3: bin/O3/b2sum
+base32:
+  args: \-w 4 input/base32
+  bin:
+    O0: bin/O0/base32
+    O1: bin/O1/base32
+    O2: bin/O2/base32
+    O3: bin/O3/base32
+base64:
+  args: \-w 4 input/base64
+  bin:
+    O0: bin/O0/base64
+    O1: bin/O1/base64
+    O2: bin/O2/base64
+    O3: bin/O3/base64
+basename:
+  args: bin/basename name
+  bin:
+    O0: bin/O0/basename
+    O1: bin/O1/basename
+    O2: bin/O2/basename
+    O3: bin/O3/basename
+cat:
+  args: bin/O0/*
+  bin:
+    O0: bin/O0/cat
+    O1: bin/O1/cat
+    O2: bin/O2/cat
+    O3: bin/O3/cat
+chgrp:
+  args: \-hR adm bin
+  bin:
+    O0: bin/O0/chgrp
+    O1: bin/O1/chgrp
+    O2: bin/O2/chgrp
+    O3: bin/O3/chgrp
+  post: chgrp -hR degoerdf bin
+chmod:
+  args: 755 \-R bin
+  bin:
+    O0: bin/O0/chmod
+    O1: bin/O1/chmod
+    O2: bin/O2/chmod
+    O3: bin/O3/chmod
+  pre: chmod -R 777 bin
+chown:
+  args: \-vR degoerdf bin
+  bin:
+    O0: bin/O0/chown
+    O1: bin/O1/chown
+    O2: bin/O2/chown
+    O3: bin/O3/chown
+cksum:
+  args: input/poc.pdf
+  bin:
+    O0: bin/O0/cksum
+    O1: bin/O1/cksum
+    O2: bin/O2/cksum
+    O3: bin/O3/cksum
+comm:
+  args: \--nocheck-order bin/O0/comm bin/O0/cp
+  bin:
+    O0: bin/O0/comm
+    O1: bin/O1/comm
+    O2: bin/O2/comm
+    O3: bin/O3/comm
+cp:
+  args: \-vrf bin /tmp/test_bin
+  bin:
+    O0: bin/O0/cp
+    O1: bin/O1/cp
+    O2: bin/O2/cp
+    O3: bin/O3/cp
+csplit:
+  args: input/config.yaml \--prefix=SCATSPLIT /\:/ {*}
+  bin:
+    O0: bin/O0/csplit
+    O1: bin/O1/csplit
+    O2: bin/O2/csplit
+    O3: bin/O3/csplit
+  post: rm ./SCATSPLIT*
+cut:
+  args: \-d "0" \-f 1 input/poc.pdf
+  bin:
+    O0: bin/O0/cut
+    O1: bin/O1/cut
+    O2: bin/O2/cut
+    O3: bin/O3/cut
+date:
+  args: \-u
+  bin:
+    O0: bin/O0/date
+    O1: bin/O1/date
+    O2: bin/O2/date
+    O3: bin/O3/date
+dd:
+  args: if=/dev/urandom of=/dev/null count=100 bs=50K status=none
+  bin:
+    O0: bin/O0/dd
+    O1: bin/O1/dd
+    O2: bin/O2/dd
+    O3: bin/O3/dd
+df:
+  args: \-ahHi
+  bin:
+    O0: bin/O0/df
+    O1: bin/O1/df
+    O2: bin/O2/df
+    O3: bin/O3/df
+dir:
+  args: \-a
+  bin:
+    O0: bin/O0/dir
+    O1: bin/O1/dir
+    O2: bin/O2/dir
+    O3: bin/O3/dir
+dircolors:
+  args: ' '
+  bin:
+    O0: bin/O0/dircolors
+    O1: bin/O1/dircolors
+    O2: bin/O2/dircolors
+    O3: bin/O3/dircolors
+du:
+  args: \-l \-a \-c \-h \-d 1
+  bin:
+    O0: bin/O0/du
+    O1: bin/O1/du
+    O2: bin/O2/du
+    O3: bin/O3/du
+echo:
+  args: scat is a tool for dynamic analysis
+  bin:
+    O0: bin/O0/echo
+    O1: bin/O1/echo
+    O2: bin/O2/echo
+    O3: bin/O3/echo
+env:
+  args: ' '
+  bin:
+    O0: bin/O0/env
+    O1: bin/O1/env
+    O2: bin/O2/env
+    O3: bin/O3/env
+expand:
+  args: input/config.yaml
+  bin:
+    O0: bin/O0/expand
+    O1: bin/O1/expand
+    O2: bin/O2/expand
+    O3: bin/O3/expand
+expr:
+  args: '\(1 \> 2 \| 1 \!= 3\) \& \( "text" : "tes" \)'
+  bin:
+    O0: bin/O0/expr
+    O1: bin/O1/expr
+    O2: bin/O2/expr
+    O3: bin/O3/expr
+factor:
+  args: '200560490130'
+  bin:
+    O0: bin/O0/factor
+    O1: bin/O1/factor
+    O2: bin/O2/factor
+    O3: bin/O3/factor
+'false':
+  args: ' '
+  bin:
+    O0: bin/O0/false
+    O1: bin/O1/false
+    O2: bin/O2/false
+    O3: bin/O3/false
+fmt:
+  args: \-c \-w 80 input/config.yaml
+  bin:
+    O0: bin/O0/fmt
+    O1: bin/O1/fmt
+    O2: bin/O2/fmt
+    O3: bin/O3/fmt
+fold:
+  args: \-b \-s \-w 10 input/config.yaml
+  bin:
+    O0: bin/O0/fold
+    O1: bin/O1/fold
+    O2: bin/O2/fold
+    O3: bin/O3/fold
+getlimits:
+  args: ' '
+  bin:
+    O0: bin/O0/getlimits
+    O1: bin/O1/getlimits
+    O2: bin/O2/getlimits
+    O3: bin/O3/getlimits
+ginstall:
+  args: \-p \-v \-s bin/O0/* tmp/bin/
+  bin:
+    O0: bin/O0/ginstall
+    O1: bin/O1/ginstall
+    O2: bin/O2/ginstall
+    O3: bin/O3/ginstall
+  post: rm -rf ./tmp/bin
+  pre: mkdir ./tmp/bin
+groups:
+  args: ' '
+  bin:
+    O0: bin/O0/groups
+    O1: bin/O1/groups
+    O2: bin/O2/groups
+    O3: bin/O3/groups
+head:
+  args: \-n 150 bin/O0/head
+  bin:
+    O0: bin/O0/head
+    O1: bin/O1/head
+    O2: bin/O2/head
+    O3: bin/O3/head
+hostid:
+  args: ' '
+  bin:
+    O0: bin/O0/hostid
+    O1: bin/O1/hostid
+    O2: bin/O2/hostid
+    O3: bin/O3/hostid
+id:
+  args: \-a \-n \-G \-z
+  bin:
+    O0: bin/O0/id
+    O1: bin/O1/id
+    O2: bin/O2/id
+    O3: bin/O3/id
+join:
+  args: \--nocheck-order bin/O0/base32 bin/O0/base64
+  bin:
+    O0: bin/O0/join
+    O1: bin/O1/join
+    O2: bin/O2/join
+    O3: bin/O3/join
+kill:
+  args: \-s 9 `pidof nc`
+  bin:
+    O0: bin/O0/kill
+    O1: bin/O1/kill
+    O2: bin/O2/kill
+    O3: bin/O3/kill
+  pre: nc -l 5678 &
+link:
+  args: input/poc.pdf tmp/poc.link
+  bin:
+    O0: bin/O0/link
+    O1: bin/O1/link
+    O2: bin/O2/link
+    O3: bin/O3/link
+  post: rm tmp/poc.link
+ln:
+  args: input/poc.pdf tmp/poc.link
+  bin:
+    O0: bin/O0/ln
+    O1: bin/O1/ln
+    O2: bin/O2/ln
+    O3: bin/O3/ln
+  post: rm tmp/poc.link
+logname:
+  args: ''
+  bin:
+    O0: bin/O0/logname
+    O1: bin/O1/logname
+    O2: bin/O2/logname
+    O3: bin/O3/logname
+ls:
+  args: \-larth bin/
+  bin:
+    O0: bin/O0/ls
+    O1: bin/O1/ls
+    O2: bin/O2/ls
+    O3: bin/O3/ls
+make-prime-list:
+  args: '100000'
+  bin:
+    O0: bin/O0/make-prime-list
+    O1: bin/O1/make-prime-list
+    O2: bin/O2/make-prime-list
+    O3: bin/O3/make-prime-list
+md5sum:
+  args: input/poc.pdf
+  bin:
+    O0: bin/O0/md5sum
+    O1: bin/O1/md5sum
+    O2: bin/O2/md5sum
+    O3: bin/O3/md5sum
+mkdir:
+  args: \-p ./tmp/direc
+  bin:
+    O0: bin/O0/mkdir
+    O1: bin/O1/mkdir
+    O2: bin/O2/mkdir
+    O3: bin/O3/mkdir
+  post: rmdir ./tmp/direc
+mkfifo:
+  args: tmp/scat
+  bin:
+    O0: bin/O0/mkfifo
+    O1: bin/O1/mkfifo
+    O2: bin/O2/mkfifo
+    O3: bin/O3/mkfifo
+  post: rm tmp/scat
+mknod:
+  args: tmp/fifo p
+  bin:
+    O0: bin/O0/mknod
+    O1: bin/O1/mknod
+    O2: bin/O2/mknod
+    O3: bin/O3/mknod
+  post: rm tmp/fifo
+mktemp:
+  args: \-d tmp/dir.XXXXXX
+  bin:
+    O0: bin/O0/mktemp
+    O1: bin/O1/mktemp
+    O2: bin/O2/mktemp
+    O3: bin/O3/mktemp
+  post: rm -rf tmp/dir.*
+mv:
+  args: tmp/bin tmp/binold
+  bin:
+    O0: bin/O0/mv
+    O1: bin/O1/mv
+    O2: bin/O2/mv
+    O3: bin/O3/mv
+  post: rm -rf tmp/binold tmp/bin
+  pre: cp -r bin tmp/bin
+nl:
+  args: input/config.yaml
+  bin:
+    O0: bin/O0/nl
+    O1: bin/O1/nl
+    O2: bin/O2/nl
+    O3: bin/O3/nl
+nproc:
+  args: \--all
+  bin:
+    O0: bin/O0/nproc
+    O1: bin/O1/nproc
+    O2: bin/O2/nproc
+    O3: bin/O3/nproc
+numfmt:
+  args: \--from=iec 373875638563598K
+  bin:
+    O0: bin/O0/numfmt
+    O1: bin/O1/numfmt
+    O2: bin/O2/numfmt
+    O3: bin/O3/numfmt
+od:
+  args: input/config.yaml
+  bin:
+    O0: bin/O0/od
+    O1: bin/O1/od
+    O2: bin/O2/od
+    O3: bin/O3/od
+paste:
+  args: input/poc.pdf
+  bin:
+    O0: bin/O0/paste
+    O1: bin/O1/paste
+    O2: bin/O2/paste
+    O3: bin/O3/paste
+pathchk:
+  args: input/config.yaml
+  bin:
+    O0: bin/O0/pathchk
+    O1: bin/O1/pathchk
+    O2: bin/O2/pathchk
+    O3: bin/O3/pathchk
+pinky:
+  args: ' '
+  bin:
+    O0: bin/O0/pinky
+    O1: bin/O1/pinky
+    O2: bin/O2/pinky
+    O3: bin/O3/pinky
+pr:
+  args: input/config.yaml
+  bin:
+    O0: bin/O0/pr
+    O1: bin/O1/pr
+    O2: bin/O2/pr
+    O3: bin/O3/pr
+printenv:
+  args: ' '
+  bin:
+    O0: bin/O0/printenv
+    O1: bin/O1/printenv
+    O2: bin/O2/printenv
+    O3: bin/O3/printenv
+printf:
+  args: "'scat %s\tcool!\t' 'is'"
+  bin:
+    O0: bin/O0/printf
+    O1: bin/O1/printf
+    O2: bin/O2/printf
+    O3: bin/O3/printf
+ptx:
+  args: input/config.yaml
+  bin:
+    O0: bin/O0/ptx
+    O1: bin/O1/ptx
+    O2: bin/O2/ptx
+    O3: bin/O3/ptx
+pwd:
+  args: ' '
+  bin:
+    O0: bin/O0/pwd
+    O1: bin/O1/pwd
+    O2: bin/O2/pwd
+    O3: bin/O3/pwd
+readlink:
+  args: tmp/link
+  bin:
+    O0: bin/O0/readlink
+    O1: bin/O1/readlink
+    O2: bin/O2/readlink
+    O3: bin/O3/readlink
+  post: rm tmp/link
+  pre: ln -s input/poc.pdf tmp/link
+realpath:
+  args: input/config.yaml
+  bin:
+    O0: bin/O0/realpath
+    O1: bin/O1/realpath
+    O2: bin/O2/realpath
+    O3: bin/O3/realpath
+rm:
+  args: \-vrf tmp/test_bin/*
+  bin:
+    O0: bin/O0/rm
+    O1: bin/O1/rm
+    O2: bin/O2/rm
+    O3: bin/O3/rm
+  pre: cp -vr bin tmp/test_bin
+rmdir:
+  args: tmp/emptydir
+  bin:
+    O0: bin/O0/rmdir
+    O1: bin/O1/rmdir
+    O2: bin/O2/rmdir
+    O3: bin/O3/rmdir
+  pre: mkdir tmp/emptydir
+seq:
+  args: 1 7 100000
+  bin:
+    O0: bin/O0/seq
+    O1: bin/O1/seq
+    O2: bin/O2/seq
+    O3: bin/O3/seq
+sha1sum:
+  args: input/poc.pdf
+  bin:
+    O0: bin/O0/sha1sum
+    O1: bin/O1/sha1sum
+    O2: bin/O2/sha1sum
+    O3: bin/O3/sha1sum
+sha224sum:
+  args: input/poc.pdf
+  bin:
+    O0: bin/O0/sha224sum
+    O1: bin/O1/sha224sum
+    O2: bin/O2/sha224sum
+    O3: bin/O3/sha224sum
+sha256sum:
+  args: input/poc.pdf
+  bin:
+    O0: bin/O0/sha256sum
+    O1: bin/O1/sha256sum
+    O2: bin/O2/sha256sum
+    O3: bin/O3/sha256sum
+sha384sum:
+  args: input/poc.pdf
+  bin:
+    O0: bin/O0/sha384sum
+    O1: bin/O1/sha384sum
+    O2: bin/O2/sha384sum
+    O3: bin/O3/sha384sum
+sha512sum:
+  args: input/poc.pdf
+  bin:
+    O0: bin/O0/sha512sum
+    O1: bin/O1/sha512sum
+    O2: bin/O2/sha512sum
+    O3: bin/O3/sha512sum
+shred:
+  args: \-n 100 tmp/todel
+  bin:
+    O0: bin/O0/shred
+    O1: bin/O1/shred
+    O2: bin/O2/shred
+    O3: bin/O3/shred
+  post: rm tmp/todel
+  pre: cp input/poc.pdf tmp/todel
+shuf:
+  args: tmp/config.yaml.copy
+  bin:
+    O0: bin/O0/shuf
+    O1: bin/O1/shuf
+    O2: bin/O2/shuf
+    O3: bin/O3/shuf
+  post: rm tmp/config.yaml.copy
+  pre: cp input/config.yaml tmp/config.yaml.copy
+sleep:
+  args: '2'
+  bin:
+    O0: bin/O0/sleep
+    O1: bin/O1/sleep
+    O2: bin/O2/sleep
+    O3: bin/O3/sleep
+sort:
+  args: input/* 1> /dev/null
+  bin:
+    O0: bin/O0/sort
+    O1: bin/O1/sort
+    O2: bin/O2/sort
+    O3: bin/O3/sort
+split:
+  args: \-b 1000 input/config.yaml SCATSPLIT
+  bin:
+    O0: bin/O0/split
+    O1: bin/O1/split
+    O2: bin/O2/split
+    O3: bin/O3/split
+  post: rm ./SCATSPLIT*
+stat:
+  args: input/poc.pdf
+  bin:
+    O0: bin/O0/stat
+    O1: bin/O1/stat
+    O2: bin/O2/stat
+    O3: bin/O3/stat
+stty:
+  args: ' '
+  bin:
+    O0: bin/O0/stty
+    O1: bin/O1/stty
+    O2: bin/O2/stty
+    O3: bin/O3/stty
+sum:
+  args: input/poc.pdf
+  bin:
+    O0: bin/O0/sum
+    O1: bin/O1/sum
+    O2: bin/O2/sum
+    O3: bin/O3/sum
+sync:
+  args: ' '
+  bin:
+    O0: bin/O0/sync
+    O1: bin/O1/sync
+    O2: bin/O2/sync
+    O3: bin/O3/sync
+tac:
+  args: bin/O0/cat
+  bin:
+    O0: bin/O0/tac
+    O1: bin/O1/tac
+    O2: bin/O2/tac
+    O3: bin/O3/tac
+tail:
+  args: \-n 150 bin/O0/tail
+  bin:
+    O0: bin/O0/tail
+    O1: bin/O1/tail
+    O2: bin/O2/tail
+    O3: bin/O3/tail
+tee:
+  args: < input/poc.pdf
+  bin:
+    O0: bin/O0/tee
+    O1: bin/O1/tee
+    O2: bin/O2/tee
+    O3: bin/O3/tee
+test:
+  args: \-b input/config.yaml \-a \-e input/config.yaml \-a \-x bin/O0/cat
+  bin:
+    O0: bin/O0/test
+    O1: bin/O1/test
+    O2: bin/O2/test
+    O3: bin/O3/test
+timeout:
+  args: 1 bin/O0/tee
+  bin:
+    O0: bin/O0/timeout
+    O1: bin/O1/timeout
+    O2: bin/O2/timeout
+    O3: bin/O3/timeout
+touch:
+  args: tmp/scat.tmp
+  bin:
+    O0: bin/O0/touch
+    O1: bin/O1/touch
+    O2: bin/O2/touch
+    O3: bin/O3/touch
+  post: rm tmp/scat.tmp
+tr:
+  args: \-d [:digit:] < input/poc.pdf
+  bin:
+    O0: bin/O0/tr
+    O1: bin/O1/tr
+    O2: bin/O2/tr
+    O3: bin/O3/tr
+'true':
+  args: ' '
+  bin:
+    O0: bin/O0/true
+    O1: bin/O1/true
+    O2: bin/O2/true
+    O3: bin/O3/true
+truncate:
+  args: \-s 1000000 tmp/scat.tmp
+  bin:
+    O0: bin/O0/truncate
+    O1: bin/O1/truncate
+    O2: bin/O2/truncate
+    O3: bin/O3/truncate
+  post: rm tmp/scat.tmp
+tsort:
+  args: input/tosort
+  bin:
+    O0: bin/O0/tsort
+    O1: bin/O1/tsort
+    O2: bin/O2/tsort
+    O3: bin/O3/tsort
+tty:
+  args: ' '
+  bin:
+    O0: bin/O0/tty
+    O1: bin/O1/tty
+    O2: bin/O2/tty
+    O3: bin/O3/tty
+uname:
+  args: \-a
+  bin:
+    O0: bin/O0/uname
+    O1: bin/O1/uname
+    O2: bin/O2/uname
+    O3: bin/O3/uname
+unexpand:
+  args: \-a \-t 2 input/config.yaml
+  bin:
+    O0: bin/O0/unexpand
+    O1: bin/O1/unexpand
+    O2: bin/O2/unexpand
+    O3: bin/O3/unexpand
+uniq:
+  args: \-c \-u input/coreutils.data
+  bin:
+    O0: bin/O0/uniq
+    O1: bin/O1/uniq
+    O2: bin/O2/uniq
+    O3: bin/O3/uniq
+unlink:
+  args: tmp/link
+  bin:
+    O0: bin/O0/unlink
+    O1: bin/O1/unlink
+    O2: bin/O2/unlink
+    O3: bin/O3/unlink
+  pre: ln -s input/poc.pdf tmp/link
+uptime:
+  args: ' '
+  bin:
+    O0: bin/O0/uptime
+    O1: bin/O1/uptime
+    O2: bin/O2/uptime
+    O3: bin/O3/uptime
+users:
+  args: ' '
+  bin:
+    O0: bin/O0/users
+    O1: bin/O1/users
+    O2: bin/O2/users
+    O3: bin/O3/users
+vdir:
+  args: ' '
+  bin:
+    O0: bin/O0/vdir
+    O1: bin/O1/vdir
+    O2: bin/O2/vdir
+    O3: bin/O3/vdir
+wc:
+  args: \-l \-w input/config.yaml
+  bin:
+    O0: bin/O0/wc
+    O1: bin/O1/wc
+    O2: bin/O2/wc
+    O3: bin/O3/wc
+who:
+  args: \-a \-b \-d \-H
+  bin:
+    O0: bin/O0/who
+    O1: bin/O1/who
+    O2: bin/O2/who
+    O3: bin/O3/who
+whoami:
+  args: ' '
+  bin:
+    O0: bin/O0/whoami
+    O1: bin/O1/whoami
+    O2: bin/O2/whoami
+    O3: bin/O3/whoami
+

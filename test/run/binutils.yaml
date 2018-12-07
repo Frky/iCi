@@ -1,0 +1,80 @@
+addr2line:
+    args: \-e ./input/binary \-a 405000
+    bin:
+        O0: bin/O0/addr2line
+        O1: bin/O1/addr2line
+        O2: bin/O2/addr2line
+        O3: bin/O3/addr2line
+    pre: ""
+    post: ""
+ar:
+    args: "q tmp/archive.ar input/*"
+    bin:
+        O0: bin/O0/ar
+        O1: bin/O1/ar
+        O2: bin/O2/ar
+        O3: bin/O3/ar
+    pre: ""
+    post: "rm tmp/archive.ar"
+objcpy:
+    args: \-D \-S \-F pei-x86-64 ./input/binary ./tmp/objdump_pe
+    bin:
+        O0: bin/O0/objcpy
+        O1: bin/O1/objcpy
+        O2: bin/O2/objcpy
+        O3: bin/O3/objcpy
+    post: "rm tmp/objdump_pe"
+objdump:
+    args: \-d bin/O0/objcpy
+    bin:
+        O0: bin/O0/objdump
+        O1: bin/O1/objdump
+        O2: bin/O2/objdump
+        O3: bin/O3/objdump
+    pre: ""
+    post: ""
+ranlib:
+    args: tmp/archive.ar
+    bin:
+        O0: bin/O0/ranlib
+        O1: bin/O1/ranlib
+        O2: bin/O2/ranlib
+        O3: bin/O3/ranlib
+    pre: "ar q tmp/archive.ar input/*"
+    post: "rm tmp/archive.ar"
+readelf:
+    args: \-a input/binary
+    bin:
+        O0: bin/O0/readelf
+        O1: bin/O1/readelf
+        O2: bin/O2/readelf
+        O3: bin/O3/readelf
+    pre: ""
+    post: ""
+size:
+    args: \-t input/binary
+    bin:
+        O0: bin/O0/size
+        O1: bin/O1/size
+        O2: bin/O2/size
+        O3: bin/O3/size
+    pre: ""
+    post: ""
+strings:
+    args: "input/binary"
+    bin:
+        O0: bin/O0/strings
+        O1: bin/O1/strings
+        O2: bin/O2/strings
+        O3: bin/O3/strings
+    pre: ""
+    post: ""
+strip:
+    args: "tmp/binary"
+    bin:
+        O0: bin/O0/strip
+        O1: bin/O1/strip
+        O2: bin/O2/strip
+        O3: bin/O3/strip
+    pre: "cp input/binary tmp/binary"
+    post: "rm tmp/binary"

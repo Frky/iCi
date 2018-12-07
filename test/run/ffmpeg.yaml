@@ -1,0 +1,9 @@
+ffmpeg_g:
+    args: \-i input/video.mp4 tmp/video.mkv \-y
+    bin:
+        O0: bin/O0/ffmpeg_g 
+        O1: bin/O1/ffmpeg_g 
+        O2: bin/O2/ffmpeg_g 
+        O3: bin/O3/ffmpeg_g 
+    pre: ""
+    post: "rm tmp/video.mkv"

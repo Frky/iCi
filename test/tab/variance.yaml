@@ -1,0 +1,14 @@
+analysis:
+    noinst: True
+    pempty: True
+    oracle: False
+    jcall: False
+    jmp: False
+    iCi: False
+output:
+    overhead: False
+    fscore: False
+    variance: True
+    opti_lvls: ["O0", "O1", "O2", "O3"]
+ignore: ["SPEC2006", "SPEC2006_save"] 
+datadir: "./res/"
