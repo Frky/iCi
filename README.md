@@ -335,6 +335,8 @@ executions to prune jumps that are not called (we would not need to even instrum
 
 ## User Guide
 
+Note: if you only want the tool, checkout the `master` branch; if you want to replay the experiments shown in the paper, checkout the `benchmark` branch.
+
 ### Installation
 
 #### Requirements
@@ -349,7 +351,7 @@ our experiments, this virtualenv must be located at .venv/iCi.
 First clone the repo:
 
 ```
-git clone git@bitbucket.org:Frky/iCi
+git clone https://github.com/Frky/iCi.git
 ```
 
 Second, install the python dependencies (preferably in your virtualenv).
